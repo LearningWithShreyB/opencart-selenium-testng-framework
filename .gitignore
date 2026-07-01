@@ -1,0 +1,34 @@
+# ==========================================
+# 1. Build and Compiled Artifacts (Maven)
+# ==========================================
+# This target folder contains compiled bytecode (.class files) and packaged jars.
+/target/
+
+# ==========================================
+# 2. Automation Framework Execution Outputs
+# ==========================================
+# Exclude dynamically generated execution files so they don't clutter GitHub.
+/logs/
+/reports/
+/screenshots/
+test-output/
+
+# ==========================================
+# 3. IDE Configurations (Eclipse / IntelliJ)
+# ==========================================
+# These are local to your computer's setup. Other users don't need them.
+.settings/
+.project
+.classpath
+.factorypath
+*.launch
+.idea/
+*.iml
+*.iws
+out/
+
+# ==========================================
+# 4. Operating System Files
+# ==========================================
+.DS_Store
+Thumbs.db
