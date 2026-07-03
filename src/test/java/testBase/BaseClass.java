@@ -19,7 +19,7 @@ public class BaseClass {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
-		driver.get("http://localhost/opencart/upload/index.php");
+		driver.get("https://tutorialsninja.com/demo/");
 		driver.manage().window().maximize();
 	}
 	

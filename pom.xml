@@ -1,76 +1,186 @@
 <project xmlns="https://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>SeleniumJavaFramework</groupId>
-	<artifactId>SeleniumJavaFramework</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+
+	<groupId>com.shrey.selenium</groupId>
+	<artifactId>opencart-selenium-testng-framework</artifactId>
+	<version>1.0.0</version>
+	<name>OpenCart Selenium TestNG Framework</name>
+	<description>Automation Framework using Selenium, Java, TestNG and Maven</description>
+
+	<!-- ========================================================= -->
+	<!-- Project Properties -->
+	<!-- ========================================================= -->
+
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+
+		<selenium.version>4.44.0</selenium.version>
+		<testng.version>7.11.0</testng.version>
+
+		<poi.version>5.4.1</poi.version>
+
+		<log4j.version>2.26.0</log4j.version>
+
+		<extent.version>5.1.2</extent.version>
+
+		<commons.io.version>2.20.0</commons.io.version>
+
+		<commons.lang3.version>3.18.0</commons.lang3.version>
+
+		<webdrivermanager.version>6.3.2</webdrivermanager.version>
+
+	</properties>
+
+	<!-- ========================================================= -->
+	<!-- Dependencies -->
+	<!-- ========================================================= -->
+
 	<dependencies>
-		<!--
-		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java  -->
+
+		<!-- Selenium -->
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.20.0</version>
+			<version>${selenium.version}</version>
 		</dependency>
-		<!--  https://mvnrepository.com/artifact/org.apache.poi/poi  -->
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>5.2.5</version>
-		</dependency>
-		<!--  https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml  -->
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>5.2.5</version>
-		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core  -->
-		<!--  https://logging.apache.org/log4j/2.x/maven-artifacts.html  -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>2.22.0</version>
-		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api  -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>2.22.0</version>
-		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl  -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>2.22.0</version>
-		</dependency>
-		<!--  https://mvnrepository.com/artifact/com.aventstack/extentreports  -->
-		<dependency>
-			<groupId>com.aventstack</groupId>
-			<artifactId>extentreports</artifactId>
-			<version>5.1.1</version>
-		</dependency>
-		<!--  https://mvnrepository.com/artifact/org.testng/testng  -->
+
+		<!-- TestNG -->
+
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.8.0</version>
+			<version>${testng.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<!--  https://mvnrepository.com/artifact/commons-io/commons-io  -->
+
+		<!-- WebDriverManager -->
+
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>${webdrivermanager.version}</version>
+		</dependency>
+
+		<!-- Apache POI -->
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+
+		<!-- Log4j2 -->
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j2-impl</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<!-- Extent Reports -->
+
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extent.version}</version>
+		</dependency>
+
+		<!-- Commons IO -->
+
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.13.0</version>
+			<version>${commons.io.version}</version>
 		</dependency>
-		<!--  https://mvnrepository.com/artifact/org.apache.commons/commons-lang3  -->
+
+		<!-- Commons Lang -->
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.12.0</version>
+			<version>${commons.lang3.version}</version>
 		</dependency>
+
 	</dependencies>
+
+	<!-- ========================================================= -->
+	<!-- Build Plugins -->
+	<!-- ========================================================= -->
+
+	<build>
+
+		<plugins>
+
+			<!-- Java Compiler -->
+
+			<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>
+
+				<artifactId>maven-compiler-plugin</artifactId>
+
+				<version>3.14.1</version>
+
+				<configuration>
+
+					<source>${maven.compiler.source}</source>
+
+					<target>${maven.compiler.target}</target>
+
+				</configuration>
+
+			</plugin>
+
+			<!-- TestNG Execution -->
+
+			<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>
+
+				<artifactId>maven-surefire-plugin</artifactId>
+
+				<version>3.5.4</version>
+
+				<configuration>
+
+					<suiteXmlFiles>
+
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+
+					</suiteXmlFiles>
+
+				</configuration>
+
+			</plugin>
+
+		</plugins>
+
+	</build>
+
 </project>
