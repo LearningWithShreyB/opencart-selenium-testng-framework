@@ -171,7 +171,7 @@
 
 					<suiteXmlFiles>
 
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<suiteXmlFile>crossbrowsertesting_parallel.xml</suiteXmlFile>
 
 					</suiteXmlFiles>
 
