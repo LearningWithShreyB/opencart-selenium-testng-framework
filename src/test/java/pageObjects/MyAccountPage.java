@@ -25,6 +25,15 @@ public class MyAccountPage extends BasePage {
 		}
 	}
 
+	// NEW: Added specifically for your DDT test case loop
+	public boolean isLogoutLinkExists() {
+		try {
+			return (lnkLogout.isDisplayed());
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 	public void clickLogout() {
 		lnkLogout.click();
 

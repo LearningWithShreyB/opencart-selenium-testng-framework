@@ -113,6 +113,7 @@ public class ExcelUtility {
 		style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
 		cell.setCellStyle(style);
+		fo = new FileOutputStream(path);
 		workbook.write(fo);
 		workbook.close();
 		fi.close();
@@ -132,6 +133,7 @@ public class ExcelUtility {
 		style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
 		cell.setCellStyle(style);
+		fo = new FileOutputStream(path);
 		workbook.write(fo);
 		workbook.close();
 		fi.close();
