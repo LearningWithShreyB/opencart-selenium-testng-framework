@@ -28,7 +28,7 @@ public class BaseClass {
     public Logger logger;
     public Properties p;
     
-    @BeforeClass(groups = {"sanity", "regression", "master"})
+    @BeforeClass(groups = {"Sanity", "Regression", "Master"})
     @Parameters({"os", "browser"})
     public void setup(String os, String br) throws IOException {
         
@@ -63,7 +63,7 @@ public class BaseClass {
         driver.manage().window().maximize();
     }
     
-    @AfterClass(groups = {"sanity", "regression", "master"})
+    @AfterClass(groups = {"Sanity", "Regression", "Master"})
     public void tearDown() {
         if (driver != null) {
             driver.quit(); // Fully terminates the active browser driver process cleanly

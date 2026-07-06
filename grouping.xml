@@ -9,9 +9,9 @@
 		<parameter name="browser" value="chrome" />
 		<groups>
 			<run>
-				<include name="sanity" />
-				<include name="regression" />
-				<!-- <include name="master" />  -->
+				<include name="Sanity" />
+				<include name="Regression" />
+				<!-- <include name="Master" />  -->
 				<!--  <exclude name="" />  -->
 			</run>
 		</groups>
