@@ -8,19 +8,11 @@
 	<test thread-count="5" name="Test">
 		<parameter name="os" value="Windows" />
 		<parameter name="browser" value="chrome" />
-		<groups>
-			<run>
-				<include name="Sanity" />
-				<include name="Regression" />
-				<include name="DataDriven" />
-				<!-- <include name="Master" />  -->
-				<!--  <exclude name="" />  -->
-			</run>
-		</groups>
 		<classes>
 			<class name="testCases.TC_001_AccountRegistrationTest" />
 			<class name="testCases.TC_002_LoginTest" />
-			<class name="testCases.TC_003_LoginDDT" />
+			<!--class name="testCases.TC_003_LoginDDT" /> -->
+			<class name="testCases.TC_004_SearchProductTest" />
 		</classes>
 	</test>
 	<!--  Test  -->
