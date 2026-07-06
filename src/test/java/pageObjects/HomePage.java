@@ -4,37 +4,45 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
 
-	
-	public HomePage(WebDriver driver)
-	{
+	public HomePage(WebDriver driver) {
 		super(driver);
 	}
-	
-@FindBy(xpath="//span[normalize-space()='My Account']") 
-WebElement lnkMyaccount;
 
-@FindBy(xpath="//a[normalize-space()='Register']") 
-WebElement lnkRegister;
+	@FindBy(xpath = "//span[normalize-space()='My Account']")
+	WebElement lnkMyaccount;
 
-@FindBy(linkText = "Login")   // Login link added in step5
-WebElement linkLogin;
+	@FindBy(xpath = "//a[normalize-space()='Register']")
+	WebElement lnkRegister;
 
+	@FindBy(linkText = "Login")
+	WebElement linkLogin;
 
-public void clickMyAccount()
-{
-	lnkMyaccount.click();
-}
+	@FindBy(xpath = "//input[@placeholder='Search']")
+	WebElement txtSearchbox;
 
-public void clickRegister()
-{
-	lnkRegister.click();
-}
+	@FindBy(xpath = "//div[@id='search']//button[@type='button']")
+	WebElement btnSearch;
 
-public void clickLogin()    
-{
-	linkLogin.click();
-}
+	public void clickMyAccount() {
+		lnkMyaccount.click();
+	}
+
+	public void clickRegister() {
+		lnkRegister.click();
+	}
+
+	public void clickLogin() {
+		linkLogin.click();
+	}
+
+	public void enterProductName(String pName) {
+		txtSearchbox.sendKeys(pName);
+	}
+
+	public void clickSearch() {
+		btnSearch.click();
+	}
 
 }
