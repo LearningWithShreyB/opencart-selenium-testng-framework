@@ -14,7 +14,7 @@ public class TC_003_LoginDDT extends BaseClass {
 	// Class-level tracker to monitor rows sequentially (Row 0 is the header row)
 	private int xlRow = 1;
 
-	@Test(dataProvider = "LoginData", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "LoginData", dataProviderClass = DataProviders.class,groups= {"Sanity","Master","DataDriven"})
 	public void verify_loginDDT(String email, String password, String exp) {
 		logger.info("**** Starting TC_003_LoginDDT loop for row index: " + xlRow + " *****");
 		logger.info("Testing Data - Email: " + email + " | Expected Result: " + exp);

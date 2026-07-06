@@ -12,6 +12,7 @@
 			<run>
 				<include name="Sanity" />
 				<include name="Regression" />
+				<include name="DataDriven" />
 				<!-- <include name="Master" />  -->
 				<!--  <exclude name="" />  -->
 			</run>
@@ -19,6 +20,7 @@
 		<classes>
 			<class name="testCases.TC_001_AccountRegistrationTest" />
 			<class name="testCases.TC_002_LoginTest" />
+			<class name="testCases.TC_003_LoginDDT" />
 		</classes>
 	</test>
 	<!--  Test  -->
