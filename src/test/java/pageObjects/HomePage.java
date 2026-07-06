@@ -24,6 +24,9 @@ public class HomePage extends BasePage {
 
 	@FindBy(xpath = "//div[@id='search']//button[@type='button']")
 	WebElement btnSearch;
+	
+	@FindBy(xpath = "(//a[normalize-space()='Logout'])[1]")
+	WebElement btnLogout;
 
 	public void clickMyAccount() {
 		lnkMyaccount.click();
@@ -43,6 +46,10 @@ public class HomePage extends BasePage {
 
 	public void clickSearch() {
 		btnSearch.click();
+	}
+	
+	public void clickLogout() {
+		btnLogout.click();
 	}
 
 }

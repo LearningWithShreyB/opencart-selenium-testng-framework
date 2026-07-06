@@ -14,6 +14,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -25,8 +26,11 @@ public class BaseClass {
 
     // Global static reference so Extent Report listeners can capture screenshots from the exact active session
     public static WebDriver driver;
+    public WebDriverWait wait;
     public Logger logger;
     public Properties p;
+    
+    private static final Duration TIMEOUT = Duration.ofSeconds(10);
     
     @BeforeClass(groups = {"Sanity", "Regression", "Master"})
     @Parameters({"os", "browser"})
@@ -55,12 +59,14 @@ public class BaseClass {
         
         // 4. Session Environment & Timeout Safeguards
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(TIMEOUT);
+		driver.manage().timeouts().pageLoadTimeout(TIMEOUT);
         
         // 5. Navigate to application URL defined in config.properties
-        driver.get(p.getProperty("appURL"));
-        driver.manage().window().maximize();
+		wait = new WebDriverWait(driver, TIMEOUT);
+
+		driver.manage().window().maximize();
+		driver.get(p.getProperty("appURL"));
     }
     
     @AfterClass(groups = {"Sanity", "Regression", "Master"})
