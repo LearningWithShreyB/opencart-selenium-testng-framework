@@ -56,6 +56,7 @@
 
 
 		<webdrivermanager.version>6.3.2</webdrivermanager.version>
+		<allure-testng-version>2.35.2</allure-testng-version>
 
 
 	</properties>
@@ -215,6 +216,13 @@
 
 			<version>${commons.lang3.version}</version>
 
+		</dependency>
+
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>${allure-testng-version}</version>
+			<scope>test</scope>
 		</dependency>
 
 
