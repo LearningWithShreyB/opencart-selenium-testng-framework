@@ -2,8 +2,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
-		<listener class-name="utilities.ExtentReportManager" />
-	</listeners>
+    <listener class-name="utilities.ExtentReportManager" />
+    <listener class-name="io.qameta.allure.testng.AllureTestNG" />
+</listeners>
 
 	<test thread-count="5" name="Test">
 		<parameter name="os" value="Windows" />

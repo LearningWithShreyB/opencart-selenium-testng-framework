@@ -1,4 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite" thread-count="5" parallel="tests">
+<listeners>
+    <listener class-name="utilities.ExtentReportManager" />
+    <listener class-name="io.qameta.allure.testng.AllureTestNG" />
+</listeners>
 	<test thread-count="5" name="chrometest">
 		<parameter name="os" value="Windows" />
 		<parameter name="browser" value="chrome" />
